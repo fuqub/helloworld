@@ -1,0 +1,10 @@
+public class Welcome {
+        public static void main(String[] args) {
+
+        double max = 366.025;
+        System.out.println("Переменная типа с плавающей точкой с наибольшим диапазоном чисел: " + max);
+
+        byte min = 127;
+        System.out.println("Переменная целочисленного типа с наименьшим диапозоном чисел: " + min);
+        }
+}
