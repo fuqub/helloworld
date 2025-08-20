@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input x: ");
+        int x = in.nextInt();
+        System.out.println("Input y: ");
+        int y = in.nextInt();
+        System.out.println("Input z: ");
+        int z = in.nextInt();
+
+        double average = (x + y + z) / 3.0; //вычисляем среднее арифметическое
+        double num = Math.floor(average / 2); // делим среднее арифметическое на 2 и округляем в меньшую сторону
+
+
+        System.out.printf("X равен: " + x + " Y равен: " + y + " Z равен: " + z);
+        System.out.println("\nСреднее арифметическое этих чисел равно: " + average);
+        System.out.println("Результат деления и округления среднего арифметичекого: " + num);
+
+
+        if(num > 3) {
+            System.out.println("Программа выполнена корректно");
+        }
+    }
+}
