@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите первое число: ");
+        double x = in.nextDouble();
+        System.out.println("Введите второе число: ");
+        double y = in.nextDouble();
+        System.out.println("Введите арифметическую оперцию, которую вы хотите сделать(+, -, *, /): ");
+        String caculator = in.next();
+
+        double result = 0;
+
+        switch (caculator) {
+            case "+":
+                result = x + y;
+                break;
+            case "-":
+                result = x - y;
+                break;
+            case "*":
+                result = x * y;
+                break;
+            case "/":
+                if (y == 0) {
+                    System.out.println("Делить на 0 нельзя");
+                }
+                result = x / y;
+                break;
+            default:
+                System.out.println("Вы ввели неправильное действие");
+                return;
+        }
+        System.out.println("Результат калькулятора: " + result);
+    }
+}
