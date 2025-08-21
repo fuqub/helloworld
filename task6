@@ -1,0 +1,103 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Выберите, что переводить: 1 - масса, 2 - расстояние");
+        int x = in.nextInt();
+        if (x == 1) {
+            System.out.println("Выберите единицу измерения массы: 1 - грамм, 2 - киллограмм, 3 - центнер, 4 - тонна");
+            int massa = in.nextInt();
+            System.out.println("Введите число: ");
+            double massaValue = in.nextDouble();
+            System.out.println("Результат вычислений: ");
+                MassaConvert(massa, massaValue);
+        }
+        else if (x == 2) {
+            System.out.println("Выберите единицу измерения расстояния: 1 - метр, 2 - миля, 3 - ярд, 4 - фут");
+            int distance = in.nextInt();
+            System.out.println("Введите число: ");
+            double distanceValue = in.nextDouble();
+            System.out.println("Результат вычислений: ");
+                DistanceConvert(distance, distanceValue);
+        }
+        else {
+            System.out.println("Вы ввели неправильное значение");
+        }
+
+    }
+    public static void MassaConvert(int massa, double massaValue) {
+        double gramm, kilogramm, centner, tonna;
+        switch (massa) {
+            case 1:
+                gramm = massaValue;
+                kilogramm = massaValue * 0.001;
+                centner = massaValue * 0.00001;
+                tonna = massaValue * 0.000001;
+                break;
+            case 2:
+                gramm = massaValue * 1000;
+                kilogramm = massaValue;
+                centner = massaValue * 0.01;
+                tonna = massaValue * 0.001;
+                break;
+            case 3:
+                gramm = massaValue * 100000;
+                kilogramm = massaValue * 100;
+                centner = massaValue;
+                tonna = massaValue * 0.1;
+                break;
+            case 4:
+                gramm = massaValue * 1000000;
+                kilogramm = massaValue * 1000;
+                centner = massaValue * 10;
+                tonna = massaValue;
+                break;
+            default:
+                System.out.println("Неправильно выбрана единица измерения массы");
+                return;
+        }
+        System.out.println("Граммы: " + gramm);
+        System.out.println("Килограммы: " + kilogramm);
+        System.out.println("Центнеры: " + centner);
+        System.out.println("Тонны: " + tonna);
+    }
+    public static void DistanceConvert(int distance, double distanceValue) {
+        double metr, milya, yard, fut;
+        switch (distance) {
+            case 1:
+                metr = distanceValue;
+                milya = distanceValue * 0.000621;
+                yard = distanceValue * 0.09361;
+                fut = distanceValue * 3.28084;
+                break;
+            case 2:
+                metr = distanceValue * 1609.34;
+                milya = distanceValue;
+                yard = distanceValue * 1760;
+                fut = distanceValue * 5280;
+                break;
+            case 3:
+                metr = distanceValue * 0.9144;
+                milya = distanceValue * 0.000568182;
+                yard = distanceValue;
+                fut = distanceValue * 3;
+                break;
+            case 4:
+                metr = distanceValue * 0.3048;
+                milya = distanceValue * 0.000189394;
+                yard = distanceValue * 0.333333;
+                fut = distanceValue;
+                break;
+            default:
+                System.out.println("Неправильно выбрана единица измерения расстояния");
+                return;
+        }
+        System.out.println("Метры: " + metr);
+        System.out.println("Мили: " + milya);
+        System.out.println("Ярды: " + yard);
+        System.out.println("Футы: " + fut);
+
+    }
+
+}
