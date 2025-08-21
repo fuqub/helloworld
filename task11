@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите первое число: ");
+        String first = in.nextLine();
+        System.out.println("Выведите второе число: ");
+        int second = in.nextInt();
+        int third = Integer.parseInt(first);
+        if(second > third){
+            System.out.println("Большее число: " + second);
+            System.out.println("Меньшее число: " + Double.parseDouble(String.valueOf(third)));
+        }
+        else if (second < third){
+            System.out.println("Большее число " + third);
+            System.out.println("Меньшее число: " + Double.parseDouble(String.valueOf(second)));
+        }
+        else {
+            System.out.println("Числа одинаковые");
+        }
+
+    }
+
+}
