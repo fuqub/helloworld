@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Welcome {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         String str = "I like Java!!!";
         boolean a, b,c;
         a = str.contains("Java");
