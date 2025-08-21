@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите строку: ");
+        String str = in.nextLine();
+        String[] words = str.split(" ");
+
+        int countWords = 0;
+        for (String word : words) {
+            if (word.matches("[a-zA-Z]+")) {
+                System.out.println(word);
+                countWords++;
+            }
+        }
+        System.out.println("Количество слов: " + countWords);
+    }
+}
