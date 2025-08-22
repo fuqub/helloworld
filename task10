@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите количество строк: ");
+        int a = in.nextInt();
+        System.out.println("Введите количество столбцов: ");
+        int b = in.nextInt();
+        int[][] array = new int[a][b];
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                System.out.println("Введите элемент: " + "[" + i + "][" + j + "]");
+                array[i][j] = in.nextInt();
+            }
+        }
+        System.out.println("Первая строка матрицы, умноженная на 3: ");
+        for(int j = 0; j < b; j++){
+            System.out.println(array[0][j] * 3);
+        }
+    }
+}
