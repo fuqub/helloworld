@@ -12,6 +12,6 @@ public class Welcome {
              sum = sum +i;
          }
      }
-     System.out.println("Сумма числ: " + sum);
+     System.out.println("Сумма чисeл: " + sum);
     }
 }
