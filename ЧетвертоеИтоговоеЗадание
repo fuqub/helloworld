@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает");
+
+        String answer = "Заархивированный вирус";
+        boolean flagHelp = false;
+        int attempts = 3;
+
+        int n = 1;
+        while (n <= attempts) {
+            System.out.println("Ваш ответ: ");
+            String str = in.nextLine();
+            
+            if (str.equalsIgnoreCase("Подсказка")) {
+                if (n == 1) { 
+                    System.out.println("Подсказка: что-то связано с безопасностью компьютера");
+                    flagHelp = true;
+                    continue;
+                } else {
+                    System.out.println("Подсказка уже недоступна");
+                    continue;
+                }
+            }
+            
+            if (str.equalsIgnoreCase(answer)) {
+                System.out.println("Правильно!");
+                return;
+            }
+            
+            if (flagHelp) {
+                System.out.println("Обидно, приходи в другой раз");
+                return;
+            }
+            
+            if (n < attempts) {
+                System.out.println("Подумай еще!");
+            } else {
+                System.out.println("Обидно, приходи в другой раз");
+            }
+
+            n += 1;
+        }
+    }
+}
