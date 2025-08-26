@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Welcome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите простое уравнение");
+        String str = in.nextLine();
+
+        if (str.length() != 5) {
+            System.out.println("Вы ввели уравнение неверно");
+            return;
+        }
+
+        char a = str.charAt(0);
+        char b = str.charAt(1);
+        char c = str.charAt(2);
+        char d = str.charAt(3);
+        char e = str.charAt(4);
+
+        if (b != '+' && b != '-') {
+            System.out.println("Операция должна быть '+' или '-'");
+            return;
+        }
+
+        if (d != '=') {
+            System.out.println("Четвертый символ должен быть '='");
+            return;
+        }
+
+        if (a != 'x' && c != 'x' && e != 'x') {
+            System.out.println("Неизвестная должна быть 'x'");
+            return;
+        }
+
+        int x;
+        int n1, n2;
+
+        if (a == 'x') {
+            if (!Character.isDigit(c) || !Character.isDigit(e)) {
+                System.out.println("После операции и после знака равно должны быть цифры");
+                return;
+            }
+            n2 = Character.getNumericValue(c);
+            int n3 = Character.getNumericValue(e);
+            if (b == '+') {
+                x = n3 - n2;
+            } else {
+                x = n3 + n2;
+            }
+        } else if (c == 'x') {
+            if (!Character.isDigit(a) || !Character.isDigit(e)) {
+                System.out.println("До операции и после знака равно должны быть цифры");
+                return;
+            }
+            n1 = Character.getNumericValue(a);
+            int n3 = Character.getNumericValue(e);
+            if (b == '+') {
+                x = n3 - n1;
+            } else {
+                x = n1 - n3;
+            }
+        } else {
+            if (!Character.isDigit(a) || !Character.isDigit(c)) {
+                System.out.println("До операции и после операции должны быть цифры");
+                return;
+            }
+            n1 = Character.getNumericValue(a);
+            n2 = Character.getNumericValue(c);
+            if (b == '+') {
+                x = n1 + n2;
+            } else {
+                x = n1 - n2;
+            }
+        }
+        System.out.println("Ответ: " + x);
+    }
+}
